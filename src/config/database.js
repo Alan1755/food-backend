@@ -11,6 +11,17 @@ const con = mysql.createConnection({
 con.connect(function(err) {
     if (err) throw err;
     console.log("conectado ao banco de dados");
-})
-
-export {con};
+});
+    function query(command, params, method = 'query'){
+        return new Promise(function(resolve, reject){
+          con[method](command, params, function(error, result){
+            if(error)
+                reject(error)
+            else    
+                resolve(result)
+          });
+       
+        });
+    
+    }
+export {con, query };
