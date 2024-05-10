@@ -58,4 +58,12 @@ id_usuario int,
     foreign key (id_pedido) references pedido (id_pedido),
     foreign key (id_produto) references produto (id_produto)
     );
-    
+    /* popular o banco*/
+    insert into usuario values(
+		null, 'administrador', 'adm@adm.com.br', 'adm', true);
+        
+insert into produto (nome, descricao,preco) values (
+'burguer', 'hamburgue de 180g, queijo, tomate e cebola', 24.90);
+	 
+     select * from usuario;
+     select * from produto;
