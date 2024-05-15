@@ -1,3 +1,4 @@
+import {} from "dotenv/config.js";
 import express from "express";
 import cors from "cors";
 import routeProduto from "./routes/route.produtos.js";
@@ -12,6 +13,6 @@ app.use(cors());
 app.use(routeProduto);
 app.use(routePedido);
 //levanta o servidor
-app.listen(3001, function(){
+app.listen(process.env.PORT, function(){
     console.log("Servidor executando na porta 3001");
 });
