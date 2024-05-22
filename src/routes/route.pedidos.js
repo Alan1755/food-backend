@@ -3,6 +3,17 @@ import { con, query } from "../config/database.js";
 
 const routePedido = Router();
 
+routePedido.get("/oedidis", function(req, res) {
+    let sql = `select * from pedido`;
+        con.query(sql, function(err, result){
+    if (err) {
+                return res.status(500).send("ocorreu um erro :", err)
+     } else {
+                return res.status(200).json(result);
+     }
+        });
+    });
+
 routePedido.post("/pedidos", function (req, res){
     let sql = `insert into pedido(id_usuario, nome, email, fone, 
                   end_lougradouro, end_numero, end_bairro, end_cidade, end_uf, end_cep, total)

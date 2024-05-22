@@ -80,3 +80,6 @@ insert into produto (nome, descricao,preco) values (
      select * from produto;
 	 select * from pedido;
      select * from pedido_item;
+
+     drop table pedido_item;
+     drop table pedido;
